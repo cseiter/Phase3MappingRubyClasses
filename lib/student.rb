@@ -23,4 +23,11 @@ class Student
     DB[:conn].execute(sql_create_tbl_students)
   end
 
+  def self.drop_table
+    sql_drop_tbl_students = <<-SQL
+    drop table if exists students
+    SQL
+    DB[:conn].execute(sql_drop_tbl_students)
+  end
+
 end
